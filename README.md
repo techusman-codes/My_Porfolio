@@ -28,8 +28,8 @@ Beyond development, I’m passionate about **techpreneurship, SDGs advocacy, and
 
 ## 📌 Projects  
 
-### 🔹 [**LuxLoged**](YOUR_LUXLOGED_REPO_LINK)  
-Smart property management app designed for seamless booking and housing solutions.  
+### 🔹 [**AI Habit Tracker App**](https://group-4-project.globeapp.dev/)  
+AI-powered mobile app to track daily habits and provide personalized improvement tips using machine learning
 
 ### 🔹 [**Financio**](YOUR_FINANCIO_REPO_LINK)  
 Personal finance management app that helps users track expenses, savings, and budgets.  
@@ -53,9 +53,9 @@ AI-powered chatbot to assist students with instant answers, resources, and guida
 🌍 Location: **Kaduna, Nigeria**  
 
 🔗 Connect with me:  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](YOUR_LINKEDIN_URL)  
-[![Twitter](https://img.shields.io/badge/Twitter-black?logo=twitter&logoColor=white)](YOUR_TWITTER_URL)  
-[![GitHub](https://img.shields.io/badge/GitHub-gray?logo=github&logoColor=white)](YOUR_GITHUB_URL)  
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/usman-umar-garba/)  
+[![Twitter](https://img.shields.io/badge/Twitter-black?logo=twitter&logoColor=white)](https://x.com/dev_useee)  
+[![GitHub](https://img.shields.io/badge/GitHub-gray?logo=github&logoColor=white)]()  
 
 ---
 
