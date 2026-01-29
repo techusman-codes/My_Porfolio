@@ -74,33 +74,53 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 // Form Submission (Demo)
 const contactForm = document.querySelector('.contact-form');
 if (contactForm) {
-	contactForm.addEventListener('submit', (e) => {
+	contactForm.addEventListener('submit', async (e) => {
 		e.preventDefault();
 
-		// Get button and change text to simulate sending
+		// Get button and change text to indicate sending
 		const btn = contactForm.querySelector('button');
 		const originalText = btn.innerHTML;
 
 		btn.innerHTML = 'Sending... <i class="fas fa-spinner fa-spin"></i>';
 		btn.disabled = true;
 
-		// Simulate API call
+		const data = new FormData(contactForm);
+
+		try {
+			const response = await fetch(contactForm.action, {
+				method: 'POST',
+				body: data,
+				headers: {
+					'Accept': 'application/json'
+				}
+			});
+
+			if (response.ok) {
+				btn.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
+				btn.style.backgroundColor = '#00ff88';
+				btn.style.color = '#000';
+				contactForm.reset();
+			} else {
+				const result = await response.json();
+				if (Object.hasOwnProperty.call(result, 'errors')) {
+					btn.innerHTML = result.errors.map(error => error.message).join(", ");
+				} else {
+					btn.innerHTML = "Oops! There was a problem.";
+				}
+				btn.style.backgroundColor = '#ff4b2b';
+			}
+		} catch (error) {
+			btn.innerHTML = 'Wait! There was a connection error.';
+			btn.style.backgroundColor = '#ff4b2b';
+		}
+
+		// Reset button after 5 seconds
 		setTimeout(() => {
-			btn.innerHTML = 'Message Sent! <i class="fas fa-check"></i>';
-			btn.style.background = '#00ff88';
-			btn.style.color = '#000';
-
-			// Reset form
-			contactForm.reset();
-
-			// Reset button after 3 seconds
-			setTimeout(() => {
-				btn.innerHTML = originalText;
-				btn.style.background = '';
-				btn.style.color = '';
-				btn.disabled = false;
-			}, 3000);
-		}, 1500);
+			btn.innerHTML = originalText;
+			btn.style.backgroundColor = '';
+			btn.style.color = '';
+			btn.disabled = false;
+		}, 5000);
 	});
 }
 
