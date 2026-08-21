@@ -1,0 +1,54 @@
+"use client";
+
+import { useState, useEffect } from "react";
+import Link from "next/link";
+import { useTheme } from "next-themes";
+import { Moon, Sun, Github, Linkedin, Twitter, Mail, Code2 } from "lucide-react";
+
+export default function Navbar() {
+  const { theme, setTheme } = useTheme();
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => setMounted(true), []);
+
+  return (
+    <div className="sticky top-0 left-0 z-50 pt-4 px-4 font-mono">
+      <div className="flex items-center justify-between h-20 max-w-7xl mx-auto">
+        <Link href="/" className="hidden lg:block">
+          <h1 className="text-2xl font-bold text-dark dark:text-white flex items-center gap-2">
+            <Code2 size={28} /> UCEECODES
+          </h1>
+        </Link>
+        <div className="flex h-[58px] items-center gap-6 md:gap-2 rounded-2xl bg-white/80 dark:bg-black/50 px-4 border border-black/10 dark:border-white/10 backdrop-blur-lg mx-auto lg:mx-0 shadow-sm">
+          {[
+            { icon: <Github size={22} />, href: "https://github.com/Ugarba202" },
+            { icon: <Linkedin size={22} />, href: "https://www.linkedin.com/in/usman-umar-garba/" },
+            { icon: <Twitter size={22} />, href: "https://x.com/dev_useee" },
+            { icon: <Mail size={22} />, href: "mailto:ugarba202@gmail.com" },
+          ].map((item, i) => (
+            <div key={i} className="flex aspect-square items-center justify-center rounded-full md:mx-4 w-[36px]">
+              <Link href={item.href} target="_blank" rel="noopener noreferrer" className="flex h-full w-full items-center justify-center text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-transform hover:scale-110">
+                {item.icon}
+              </Link>
+            </div>
+          ))}
+          <div className="w-[1px] h-6 bg-zinc-300 dark:bg-zinc-700 mx-2"></div>
+          {mounted && (
+            <button
+              onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+              className="flex items-center justify-center w-[36px] h-[36px] text-zinc-600 dark:text-zinc-300 hover:text-black dark:hover:text-white transition-transform hover:scale-110"
+              aria-label="Toggle Dark Mode"
+            >
+              {theme === 'dark' ? <Sun size={22} /> : <Moon size={22} />}
+            </button>
+          )}
+        </div>
+        <div className="hidden lg:block">
+          <a className="btn btn-light px-5 py-2.5 text-sm font-medium rounded-lg transition-colors hover:bg-slate-900 hover:text-white dark:hover:bg-slate-100 dark:hover:text-black" href="#contact">
+            Contact Me
+          </a>
+        </div>
+      </div>
+    </div>
+  );
+}

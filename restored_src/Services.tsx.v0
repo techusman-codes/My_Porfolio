@@ -1,0 +1,66 @@
+"use client";
+
+import { motion } from "framer-motion";
+import styles from "./Services.module.css";
+import { FaMobileAlt, FaBolt, FaServer, FaRocket } from "react-icons/fa";
+
+export default function Services() {
+  const services = [
+    {
+      icon: <FaMobileAlt />,
+      title: "Mobile App Solutions",
+      description: "Building high-performance cross-platform mobile applications using Flutter. Smooth user experience, responsive layouts, and robust state management."
+    },
+    {
+      icon: <FaBolt />,
+      title: "Bitcoin & Lightning",
+      description: "Integrating Bitcoin and Lightning payments. Wallet integration, invoice generation, and secure payment APIs for global transactions."
+    },
+    {
+      icon: <FaServer />,
+      title: "Backend Development",
+      description: "Designing scalable backend architectures with Python, Rust and FastAPI. Secure APIs, database management, and efficient data processing."
+    },
+    {
+      icon: <FaRocket />,
+      title: "Techpreneurship",
+      description: "Bridging technology and business. Helping startups leverage mobile tech for growth and building scalable digital products."
+    }
+  ];
+
+  return (
+    <section id="services" className={`section ${styles.services}`}>
+      <div className="container">
+        <motion.div 
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="subtitle">What I Offer</span>
+          <h2 className="title">My Services</h2>
+        </motion.div>
+
+        <div className={styles.servicesGrid}>
+          {services.map((service, index) => (
+            <motion.div 
+              key={index}
+              className={`glass ${styles.serviceCard}`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.1 }}
+              whileHover={{ y: -10 }}
+            >
+              <div className={styles.iconBox}>
+                {service.icon}
+              </div>
+              <h3>{service.title}</h3>
+              <p>{service.description}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

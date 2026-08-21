@@ -1,0 +1,75 @@
+"use client";
+
+import { useEffect, useState } from "react";
+import Image from "next/image";
+import { motion } from "framer-motion";
+import styles from "./Hero.module.css";
+import { FaGithub, FaLinkedinIn, FaTwitter, FaEnvelope } from "react-icons/fa";
+
+export default function Hero() {
+  const titles = ["Flutter Mobile Apps", "Python Backends", "Bitcoin Integrations"];
+  const [currentTitle, setCurrentTitle] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTitle((prev) => (prev + 1) % titles.length);
+    }, 3000);
+    return () => clearInterval(interval);
+  }, []);
+
+  return (
+    <section id="home" className={styles.hero}>
+      <div className={`container ${styles.heroContainer}`}>
+        <motion.div
+          className={styles.heroContent}
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8 }}
+        >
+          <span className={styles.greeting}>Hello, I'm</span>
+          <h1 className={styles.name}>Usman Umar Garba</h1>
+          <h2 className={styles.role}>
+            I build{" "}
+            <span className={styles.typewriter} key={currentTitle}>
+              {titles[currentTitle]}
+            </span>
+          </h2>
+          <p className={styles.bio}>
+            Crafting fast, secure, and resilient digital experiences with <strong>Flutter</strong>, 
+            <strong> Python/FastAPI</strong>, and <strong>Bitcoin Lightning Network</strong> integrations.
+          </p>
+          <div className={styles.heroBtns}>
+            <a href="#portfolio" className="btn btn-primary">View Work</a>
+            <a href="#contact" className="btn btn-outline">Contact Me</a>
+          </div>
+          <div className={styles.socialLinks}>
+            <a href="https://github.com/Ugarba202" target="_blank" rel="noopener noreferrer"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/usman-umar-garba/" target="_blank" rel="noopener noreferrer"><FaLinkedinIn /></a>
+            <a href="https://x.com/dev_useee" target="_blank" rel="noopener noreferrer"><FaTwitter /></a>
+            <a href="mailto:ugarba202@gmail.com"><FaEnvelope /></a>
+          </div>
+        </motion.div>
+        
+        <motion.div
+          className={styles.heroImage}
+          initial={{ opacity: 0, x: 50 }}
+          animate={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.8, delay: 0.2 }}
+        >
+          <div className={styles.imgWrapper}>
+            <Image 
+              src="/images/ucee.jpeg" 
+              alt="Usman Umar Garba" 
+              width={400} 
+              height={400} 
+              className={styles.img}
+              priority
+            />
+            {/* Decorative background circle */}
+            <div className={styles.bgCircle}></div>
+          </div>
+        </motion.div>
+      </div>
+    </section>
+  );
+}

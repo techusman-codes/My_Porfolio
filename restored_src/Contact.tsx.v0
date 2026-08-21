@@ -1,0 +1,52 @@
+"use client";
+
+import { motion } from "framer-motion";
+import styles from "./Contact.module.css";
+import { FaPaperPlane } from "react-icons/fa";
+
+export default function Contact() {
+  return (
+    <section id="contact-me" className={`section ${styles.contact}`}>
+      <div className="container">
+        <motion.div 
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="subtitle">Let's Connect</span>
+          <h2 className="title">Get In Touch</h2>
+          <p className={styles.subtext}>Have a project in mind? Let's discuss how we can work together to bring your ideas to life.</p>
+        </motion.div>
+
+        <div className={styles.contactWrapper}>
+          <motion.div 
+            className={`glass ${styles.contactCard}`}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            transition={{ delay: 0.2 }}
+          >
+            <form className={styles.contactForm} action="https://formspree.io/f/xqakpzea" method="POST">
+              <div className={styles.formGroup}>
+                <input type="text" name="name" placeholder="Your Name" required className={styles.input} />
+              </div>
+              <div className={styles.formGroup}>
+                <input type="email" name="_replyto" placeholder="Your Email" required className={styles.input} />
+              </div>
+              <div className={styles.formGroup}>
+                <input type="text" name="subject" placeholder="Subject" required className={styles.input} />
+              </div>
+              <div className={styles.formGroup}>
+                <textarea name="message" placeholder="Your Message" rows={5} required className={styles.textarea}></textarea>
+              </div>
+              <button type="submit" className={`btn btn-primary ${styles.submitBtn}`}>
+                Send Message <FaPaperPlane />
+              </button>
+            </form>
+          </motion.div>
+        </div>
+      </div>
+    </section>
+  );
+}

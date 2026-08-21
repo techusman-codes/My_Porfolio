@@ -1,0 +1,125 @@
+"use client";
+
+import { motion } from "framer-motion";
+import styles from "./Experience.module.css";
+
+export default function Experience() {
+  const experiences = [
+    {
+      title: "Mobile Software Engineer",
+      company: "Freelance | Remote",
+      details: [
+        "Spearheaded the development of cross-platform mobile applications using Flutter, ensuring high performance on both iOS and Android.",
+        "Integrated Bitcoin and Lightning Network payments into mobile apps, enabling secure and instant global transactions.",
+        "Collaborated with backend teams to design and implement efficient APIs using Python and FastAPI."
+      ]
+    },
+    {
+      title: "Flutter Developer",
+      company: "Tech Startup | Kaduna, Nigeria",
+      details: [
+        "Designed and maintained scalable backend architectures using Python and PostgreSQL.",
+        "Optimized database queries and API response times, resulting in a 40% performance improvement.",
+        "Implemented secure authentication and authorization systems for user data protection."
+      ]
+    }
+  ];
+
+  const education = [
+    {
+      title: "B.Eng. Computer Engineering",
+      year: "2024 - Present",
+      institution: "Ahmadu Bello University | Zaria",
+      details: [
+        "Focus on Software Engineering and Systems Architecture.",
+        "Active member of the university programming club."
+      ]
+    },
+    {
+      title: "Diploma Computer System Engineering",
+      year: "2021 - 2023",
+      institution: "IAIICT ABU | Zaria",
+      details: [
+        "Graduated with Honors. Focus on Software Engineering and Systems Architecture.",
+        "Led the university programming club and organized coding bootcamps for freshers."
+      ]
+    }
+  ];
+
+  return (
+    <section id="experience" className={`section ${styles.experienceSection}`}>
+      <div className="container">
+        <motion.div 
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="subtitle">My Journey</span>
+          <h2 className="title">Work Experience</h2>
+        </motion.div>
+
+        <div className={styles.timeline}>
+          {experiences.map((exp, index) => (
+            <motion.div 
+              key={index}
+              className={styles.timelineItem}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+            >
+              <div className={styles.timelineDot}></div>
+              <div className={`glass ${styles.timelineContent}`}>
+                <h3>{exp.title}</h3>
+                <h4>{exp.company}</h4>
+                <ul>
+                  {exp.details.map((detail, idx) => (
+                    <li key={idx}>{detail}</li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+
+        <motion.div 
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+          style={{ marginTop: '5rem' }}
+        >
+          <h2 className="title">Education</h2>
+        </motion.div>
+
+        <div className={styles.timeline}>
+          {education.map((edu, index) => (
+            <motion.div 
+              key={index}
+              className={styles.timelineItem}
+              initial={{ opacity: 0, x: -50 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.2 }}
+            >
+              <div className={styles.timelineDot}></div>
+              <div className={`glass ${styles.timelineContent}`}>
+                <div className={styles.eduHeader}>
+                  <h3>{edu.title}</h3>
+                  <span className={styles.year}>{edu.year}</span>
+                </div>
+                <h4>{edu.institution}</h4>
+                <ul>
+                  {edu.details.map((detail, idx) => (
+                    <li key={idx}>{detail}</li>
+                  ))}
+                </ul>
+              </div>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

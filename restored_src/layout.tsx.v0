@@ -1,0 +1,25 @@
+import type { Metadata } from "next";
+import { Inter, Outfit } from "next/font/google";
+import "./globals.css";
+
+const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
+const outfit = Outfit({ subsets: ["latin"], variable: "--font-outfit" });
+
+export const metadata: Metadata = {
+  title: "Usman Umar Garba | Mobile & Backend Engineer",
+  description: "Portfolio of Usman Umar Garba, a Mobile Software Engineer and Backend Developer specializing in Flutter, Python/FastAPI, and Bitcoin/Lightning Network.",
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  return (
+    <html lang="en" className="scroll-smooth">
+      <body className={`${inter.variable} ${outfit.variable}`}>
+        {children}
+      </body>
+    </html>
+  );
+}

@@ -1,0 +1,61 @@
+"use client";
+
+import { motion } from "framer-motion";
+import styles from "./Skills.module.css";
+import { FaAndroid, FaCode, FaPython, FaBolt, FaBitcoin, FaDatabase, FaFire, FaGithub, FaRust, FaReact, FaNode, FaServer, FaCss3, FaCloud, FaDocker } from "react-icons/fa";
+
+export default function Skills() {
+  const skills = [
+    { name: "Flutter", icon: <FaAndroid /> },
+    { name: "Dart", icon: <FaCode /> },
+    { name: "Python", icon: <FaPython /> },
+    { name: "FastAPI", icon: <FaBolt /> },
+    { name: "Bitcoin", icon: <FaBitcoin /> },
+    { name: "PostgreSQL", icon: <FaDatabase /> },
+    { name: "Firebase", icon: <FaFire /> },
+    { name: "Git", icon: <FaGithub /> },
+    { name: "Rust", icon: <FaRust /> },
+    { name: "React", icon: <FaReact /> },
+    { name: "Node.js", icon: <FaNode /> },
+    { name: "Next.js", icon: <FaReact /> },
+    { name: "Serverpod", icon: <FaServer /> },
+    { name: "Tailwind", icon: <FaCss3 /> },
+    { name: "Cloud", icon: <FaCloud /> },
+    { name: "DevOps", icon: <FaDocker /> },
+  ];
+
+  return (
+    <section id="skills" className={`section ${styles.skills}`}>
+      <div className="container">
+        <motion.div 
+          className={styles.sectionHeader}
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true }}
+        >
+          <span className="subtitle">My Expertise</span>
+          <h2 className="title">Technical Skills</h2>
+        </motion.div>
+
+        <div className={styles.skillsGrid}>
+          {skills.map((skill, index) => (
+            <motion.div 
+              key={index}
+              className={`glass ${styles.skillCard}`}
+              initial={{ opacity: 0, scale: 0.8 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ delay: index * 0.05 }}
+              whileHover={{ scale: 1.05, borderColor: "var(--accent-color)" }}
+            >
+              <div className={styles.iconWrapper}>
+                {skill.icon}
+              </div>
+              <p>{skill.name}</p>
+            </motion.div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}

@@ -1,62 +1,36 @@
-# 🌟 Usman Umar Garba - Portfolio
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-Welcome to my personal portfolio repository! 🚀  
-This project showcases my skills, projects, and experiences as a **Mobile App Developer (Flutter Engineer)**, **Bitcoin & Lightning Developer**, and **Tech Enthusiast**.  
+## Getting Started
 
----
+First, run the development server:
 
-## 👨‍💻 About Me  
-I'm **Usman Umar Garba**, a passionate **Mobile App Developer** and **Bitcoin/Lightning Engineer**.  
-I specialize in building **cross-platform mobile apps** with Flutter and creating **decentralized, open-source financial tools** using Bitcoin Core and the Lightning Network.  
-Beyond development, I’m passionate about **techpreneurship, SDGs advocacy, and community building** through mentorship and open-source.  
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
----
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## 🛠️ Skills  
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- **Mobile Development**: Flutter, Dart, Responsive UI, State Management (Provider, Riverpod, Bloc)  
-- **Backend & Databases**: Firebase, Supabase,Serverpod, REST APIs, SQLite  
-- **Cloud & Tools**: Git, GitHub, CI/CD, Cloud Deployment  
-- **Bitcoin & Lightning**:  
-  - Bitcoin Core Development  
-  - Lightning Network Protocols  
-  - On-chain & Off-chain Transactions  
-  - Bitcoin Test Framework  
-- **Others**: Python, JavaScript, Rust, Nodejs Open Source Contributions  
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
----
+## Learn More
 
-## 📌 Projects  
+To learn more about Next.js, take a look at the following resources:
 
-### 🔹 [**AI Habit Tracker App**](https://group-4-project.globeapp.dev/)  
-AI-powered mobile app to track daily habits and provide personalized improvement tips using machine learning
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-### 🔹 [**Financio**](YOUR_FINANCIO_REPO_LINK)  
-Personal finance management app that helps users track expenses, savings, and budgets.  
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-### 🔹 [**Student Assistant Chatbot**](YOUR_STUDENT_ASSISTANT_CHATBOT_REPO_LINK)  
-AI-powered chatbot to assist students with instant answers, resources, and guidance.  
+## Deploy on Vercel
 
----
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## 💼 Experience  
-- **2023 - 2024**: Frontend Developer @ CodeWariors Team  
-- **2024 - Present**: Mobile App Developer @ ABUDevs Club  
-- **2025 - Freelance**: Delivering innovative mobile and Bitcoin-based solutions for global clients  
-
----
-
-## 📩 Contact Me  
-
-📧 Email: **ugarba202@gmail.com**  
-📱 Phone: **+234 814 007 9634**  
-🌍 Location: **Kaduna, Nigeria**  
-
-🔗 Connect with me:  
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-blue?logo=linkedin&logoColor=white)](https://www.linkedin.com/in/usman-umar-garba/)  
-[![Twitter](https://img.shields.io/badge/Twitter-black?logo=twitter&logoColor=white)](https://x.com/dev_useee)  
-[![GitHub](https://img.shields.io/badge/GitHub-gray?logo=github&logoColor=white)]()  
-
----
-
-⭐ **Feel free to explore my portfolio and reach out for collaboration opportunities in Mobile Development, Bitcoin, and Lightning!**  
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
